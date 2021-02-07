@@ -14,7 +14,7 @@ The project styles were developed with SCSS, some mixins for responsive and vari
 
 ## Stored Data
 
-The information is stored in the local storage of the browser and it is updated every time a vote is made
+The information is stored in the browser’s local storage and it is updated every time a vote is made
 
 ## Running unit tests
 
