@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArtistsService } from '../../../services/artists.service';
 
 @Component({
   selector: 'app-artist',
@@ -14,10 +15,10 @@ export class ArtistComponent implements OnInit {
       magazine: 'Entertainment',
       description: 'Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.',
       type: 'kanye',
-      positive: 1,
-      negative: 1,
-      percentagePositive: 36,
-      percentageNegative: 64,
+      positive: 0,
+      negative: 0,
+      percentagePositive: 0,
+      percentageNegative: 0,
       vote: false
     },
     {
@@ -26,10 +27,10 @@ export class ArtistComponent implements OnInit {
       magazine: 'Business',
       description: 'Thank you for voting!',
       type: 'mark',
-      positive: 1,
-      negative: 1,
-      percentagePositive: 64,
-      percentageNegative: 36,
+      positive: 0,
+      negative: 0,
+      percentagePositive: 0,
+      percentageNegative: 0,
       vote: false
     },
     {
@@ -38,10 +39,10 @@ export class ArtistComponent implements OnInit {
       magazine: 'Politics',
       description: 'Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.',
       type: 'cristina',
-      positive: 1,
-      negative: 1,
-      percentagePositive: 36,
-      percentageNegative: 64,
+      positive: 0,
+      negative: 0,
+      percentagePositive: 0,
+      percentageNegative: 0,
       vote: false
     },
     {
@@ -50,18 +51,32 @@ export class ArtistComponent implements OnInit {
       magazine: 'Entertainment',
       description: 'Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.',
       type: 'malala',
-      positive: 1,
-      negative: 1,
-      percentagePositive: 36,
-      percentageNegative: 64,
+      positive: 0,
+      negative: 0,
+      percentagePositive: 0,
+      percentageNegative: 0,
       vote: false
     }
   ];
   alert = false;
 
-  constructor() { }
+  constructor(private artistServices: ArtistsService) { }
 
   ngOnInit(): void {
+    const local = localStorage.getItem('artist');
+    this.artists = local === null ? this.artists : JSON.parse(local);
+    console.log('this.artists', this.artists);
+  }
+
+  vote(artist) {
+    if (artist.vote) {
+      this.alertEvents(true);
+    }
+    this.artistServices.saveArtist(this.artists);
+  }
+
+  alertEvents(alert) {
+    this.alert = alert;
   }
 
 }

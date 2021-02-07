@@ -1,10 +1,10 @@
 <div class="artist-vote">
-  <div class="thumb-up-button">
+  <div class="thumb-up-button" *ngIf="!voted" [ngClass]="{'active': positive}" (click)="votedThumb(true)">
     <img src="./assets/images/thumb-up.png" alt="">
   </div>
-  <div class="thumb-down-button">
+  <div class="thumb-down-button" *ngIf="!voted" [ngClass]="{'active': negative}" (click)="votedThumb(false)">
     <img src="./assets/images/thumb-down.png" alt="">
   </div>
-  <button class="btn btn-outline-light">Vote now</button>
-  <button class="btn btn-outline-light">Vote again</button>
+  <button class="btn btn-outline-light" *ngIf="!voted" (click)="executeVote()">Vote now</button>
+  <button class="btn btn-outline-light" *ngIf="voted" (click)="voteAgain()">Vote again</button>
 </div>

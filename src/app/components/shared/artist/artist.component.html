@@ -22,10 +22,10 @@
               <h3 class="name">{{artist.name}}</h3>
               <p class="time-business"><strong>{{artist.time}}</strong> in {{artist.magazine}}</p>
               <p class="artist-description">{{artist.description}}</p>
-              <app-vote-buttons></app-vote-buttons>
+              <app-vote-buttons [voted]="artist.vote" [artist]="artist" (result)="vote($event)"></app-vote-buttons>
             </div>
           </div>
-          <div class="vote-results" *ngIf="artist.positive !== 0 && artist.negative !== 0">
+          <div class="vote-results" *ngIf="artist.positive !== 0 || artist.negative !== 0">
             <div class="vote-results-up" [ngStyle]="{'width': artist.percentagePositive < 25 ? 25 : artist.percentagePositive + '%'}">
               <img src="./assets/images/thumb-up.png" alt="">
               <p>{{artist.percentagePositive}}%</p>
@@ -41,4 +41,4 @@
   </div>
 </section>
 
-<app-alert [active]="alert"></app-alert>
+<app-alert [active]="alert" (activeFalse)="alertEvents($event)"></app-alert>
