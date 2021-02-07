@@ -1,0 +1,56 @@
+<header>
+  <div class="menu-container">
+    <div class="container menu">
+      <div class="logo-container">
+        <h1 class="logo">Rule of Thumb.</h1>
+      </div>
+      <button class="btn btn-outline-light visible-sm" (click)="headerMobile = !headerMobile">
+        <img src="./assets/images/menu.png" alt="">
+      </button>
+      <div class="menu-item-container" [ngClass]="{'show': headerMobile}">
+        <ul class="menu-item-list">
+          <li class="menu-item">Past Trials</li>
+          <li class="menu-item">How It Works</li>
+          <li class="menu-item">Log In / Sign Up</li>
+          <li class="menu-item">
+            <img src="./assets/images/search.png" alt="">
+          </li>
+          <div class="close-mobile" (click)="headerMobile = !headerMobile">
+            <img src="./assets/images/close.png" alt="">
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="text-vote-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="text-container">
+            <p class="text">What's your opinion on</p>
+            <h3 class="title">Pop Francis?</h3>
+            <p class="text">He’s talking tough on clergy sexual abuse, but is he just another papal pervert protector? (thumbs down) or a true pedophile punishing pontiff? (thumbs up) </p>
+            <a class="more-info" href="#"><img src="./assets/images/wiki.png" alt=""> More information</a>
+            <h4 class="sub-title">What’s Your Verdict?</h4>
+          </div>
+          <div class="vote-container">
+            <div class="thumb-up-container">
+              <img src="./assets/images/thumb-up.png" alt="">
+            </div>
+            <div class="thumb-down-container">
+              <img src="./assets/images/thumb-down.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="closing-days-container">
+    <div class="closing-container">
+      <p class="text">CLOSING IN</p>
+    </div>
+    <div class="days-container">
+      <p class="text"><strong>22</strong> days</p>
+    </div>
+  </div>
+</header>

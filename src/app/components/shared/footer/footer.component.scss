@@ -1,0 +1,42 @@
+@import "~src/assets/variables/index";
+footer {
+  .footer {
+    display: flex;
+    border-top: 2px dotted #000000;
+    padding: 2rem 0;
+    .links {
+      display: flex;
+      padding: 0;
+      margin: 0;
+      align-items: center;
+      @include responsive(xs) {
+        padding-bottom: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      .links-item {
+        list-style: none;
+        padding-right: 1rem;
+        cursor: pointer;
+        @include responsive(xs) {
+          text-align: center;
+        }
+      }
+    }
+    .social-network {
+      display: flex;
+      padding: 0;
+      margin: 0;
+      justify-content: flex-end;
+      align-items: center;
+      @include responsive(xs) {
+        justify-content: center;
+      }
+      .social-item {
+        list-style: none;
+        padding-left: 1rem;
+        cursor: pointer;
+      }
+    }
+  }
+}

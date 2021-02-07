@@ -1,0 +1,29 @@
+@import "~src/assets/variables/index";
+.newsletter {
+  padding-bottom: 2rem;
+  .newsletter-background {
+    background-image: url('/assets/images/newsletter.jpg');
+    background-size: cover;
+    .newsletter-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      align-items: center;
+      p {
+        margin: 0;
+        font-size: 2rem;
+        @include responsive(xs) {
+          font-size: 1rem;
+        }
+      }
+      .btn-outline-dark {
+        border-radius: 0;
+        font-size: 1.5rem;
+        line-height: 2;
+        @include responsive(xs) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

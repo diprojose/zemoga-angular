@@ -1,0 +1,32 @@
+@import "~src/assets/variables/index";
+.message {
+  padding: 2rem 0;
+  .message-container {
+    padding: 1rem;
+    background-color: #ebebeb;
+    display: grid;
+    grid-template-columns: 3fr 8fr 1fr;
+    align-items: center;
+    @include responsive(xs) {
+      grid-template-columns: 1fr;
+    }
+    .message-title {
+      @include responsive(xs) {
+        padding-bottom: 1rem;
+      }
+      .title {
+        font-size: 2.5rem;
+        margin: 0;
+      }
+      .sub-title {
+        margin: 0;
+      }
+    }
+    .message-close {
+      text-align: center;
+      @include responsive(xs) {
+        display: none;
+      }
+    }
+  }
+}

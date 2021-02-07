@@ -1,0 +1,37 @@
+@mixin responsive($class) {
+  @if $class==xxs {
+    @media (max-width: 320px) {
+      @content;
+    }
+  }
+  @if $class==xs {
+    @media (max-width: 991px) {
+      @content;
+    }
+  }
+  @else if $class==md {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+  @else if $class==lg {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+  @else if $class==xlg {
+    @media (min-width: 1500px) {
+      @content;
+    }
+  }
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}
+
+@mixin visible-sm() {
+  display: none;
+  @include responsive(xs) {
+    display: block;
+  }
+}

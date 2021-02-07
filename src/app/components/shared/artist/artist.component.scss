@@ -1,0 +1,116 @@
+@import "~src/assets/variables/index";
+.votes {
+  padding-bottom: 2rem;
+  .title {
+    h3 {
+      font-weight: 400;
+      font-size: 2.4rem;
+    }
+  }
+  .artist-container {
+    display: grid;
+    height: 40rem;
+    align-items: flex-end;
+    grid-template-rows: 1fr;
+    @include responsive(xs) {
+      height: 30rem;
+    }
+    &.kanye {
+      background-image: url('/assets/images/west.jpg');
+      background-size: cover;
+    }
+    &.malala {
+      background-image: url('/assets/images/malak.jpg');
+      background-size: cover;
+    }
+    &.cristina {
+      background-image: url('/assets/images/cristina.jpg');
+      background-size: cover;
+    }
+    &.mark {
+      background-image: url('/assets/images/mark.jpg');
+      background-size: cover;
+      padding: 0;
+    }
+    .vote-description-container {
+      display: grid;
+      grid-template-columns: 1fr 14fr;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, transparent 100%);
+      .thumb-result {
+        .thumb-button {
+          display: inline-block;
+          padding: 0.3rem 0.5rem 0.5rem;
+          &.blue {
+            background-color: $blue;
+          }
+          &.orange {
+            background-color: $orange;
+          }
+          img {
+            width: 20px;
+          }
+        }
+      }
+      .description {
+        color: $white;
+        padding: 0 1rem 2rem;
+        .name {
+          font-size: 3rem;
+          font-weight: 600;
+          padding-bottom: 1rem;
+          @include responsive(xs) {
+            font-size: 2rem;
+          }
+        }
+        .time-business {
+          font-size: 1rem;
+        }
+        .artist-description {
+          font-size: 1.5rem;
+        }
+        .vote-button {
+          border: 1px solid $white;
+          padding: 0.5rem 1rem;
+          p {
+            margin: 0;
+          }
+        }
+      }
+    }
+    .vote-results {
+      display: flex;
+      .vote-results-up {
+        background-color: $blue-opacity;
+        display: flex;
+        color: $white;
+        align-items: center;
+        padding: 0rem 1rem;
+        transition: width 2s;
+        img {
+          width: 30px;
+        }
+        p {
+          margin: 0;
+          font-size: 2rem;
+          padding-left: 1rem;
+        }
+      }
+      .vote-results-down {
+        background-color: $orange-opacity;
+        display: flex;
+        color: $white;
+        align-items: center;
+        padding: 0rem 1rem;
+        transition: width 2s;
+        img {
+          width: 30px;
+        }
+        p {
+          margin: 0;
+          font-size: 2rem;
+          padding-right: 1rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import "~src/assets/variables/index";
+.artist-vote {
+  display: flex;
+  .thumb-up-button {
+    background-color: $blue;
+    padding: 0.5rem;
+    margin-right: 1rem;
+    &.active {
+      border: 1px solid $white;
+    }
+    img {
+      width: 20px;
+    }
+  }
+  .thumb-down-button {
+    background-color: $orange;
+    padding: 0.5rem;
+    margin-right: 1rem;
+    &.active {
+      border: 1px solid $white;
+    }
+    img {
+      width: 20px;
+    }
+  }
+}

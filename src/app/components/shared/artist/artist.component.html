@@ -1,0 +1,44 @@
+<section class="votes">
+  <div class="container">
+    <div class="title">
+      <h3>Votes</h3>
+    </div>
+    <div class="row pt-4">
+      <div class="col-md-6 col-sm-12 pb-4" *ngFor="let artist of artists">
+        <div class="artist-container" [ngClass]="{
+          'kanye': artist.type === 'kanye',
+          'mark': artist.type === 'mark',
+          'cristina': artist.type === 'cristina',
+          'malala': artist.type === 'malala'
+        }">
+          <div class="vote-description-container">
+            <div class="thumb-result">
+              <div class="thumb-button" *ngIf="artist.positive !== 0 && artist.negative !== 0" [ngClass]="{'blue': artist.positive > artist.negative, 'orange': artist.negative > artist.positive}">
+                <img src="./assets/images/thumb-up.png" *ngIf="artist.positive > artist.negative" alt="">
+                <img src="./assets/images/thumb-down.png" *ngIf="artist.negative > artist.positive" alt="">
+              </div>
+            </div>
+            <div class="description">
+              <h3 class="name">{{artist.name}}</h3>
+              <p class="time-business"><strong>{{artist.time}}</strong> in {{artist.magazine}}</p>
+              <p class="artist-description">{{artist.description}}</p>
+              <app-vote-buttons></app-vote-buttons>
+            </div>
+          </div>
+          <div class="vote-results" *ngIf="artist.positive !== 0 && artist.negative !== 0">
+            <div class="vote-results-up" [ngStyle]="{'width': artist.percentagePositive < 25 ? 25 : artist.percentagePositive + '%'}">
+              <img src="./assets/images/thumb-up.png" alt="">
+              <p>{{artist.percentagePositive}}%</p>
+            </div>
+            <div class="vote-results-down" [ngStyle]="{'width': artist.percentageNegative < 25 ? 25 : artist.percentageNegative + '%'}">
+              <p>{{artist.percentageNegative}}%</p>
+              <img src="./assets/images/thumb-down.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-alert [active]="alert"></app-alert>

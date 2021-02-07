@@ -1,0 +1,22 @@
+@import "~src/assets/variables/index";
+.notify {
+  position: fixed;
+  bottom: 1rem;
+  width: 30%;
+  right: -100%;
+  margin-left: 2%;
+  z-index: 10;
+  text-align: center;
+  transition: all 0.5s;
+  background-color: $blue;
+  border: none;
+  color: $white;
+  padding: 0.5rem;
+  @include responsive(xs) {
+    width: 50%;
+  }
+}
+
+.show-notify {
+  right: 2% !important;
+}
