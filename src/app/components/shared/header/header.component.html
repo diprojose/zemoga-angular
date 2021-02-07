@@ -9,8 +9,8 @@
       </button>
       <div class="menu-item-container" [ngClass]="{'show': headerMobile}">
         <ul class="menu-item-list">
-          <li class="menu-item">Past Trials</li>
-          <li class="menu-item">How It Works</li>
+          <li class="menu-item" [routerLink]="['/past-trials']">Past Trials</li>
+          <li class="menu-item" [routerLink]="['/how-it-works']">How It Works</li>
           <li class="menu-item">Log In / Sign Up</li>
           <li class="menu-item">
             <img src="./assets/images/search.png" alt="">

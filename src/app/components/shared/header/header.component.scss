@@ -48,6 +48,7 @@ header {
             padding: 0 1rem;
             list-style: none;
             color: $white;
+            cursor: pointer;
             @include responsive(xs) {
               padding: 1rem;
               font-size: 2rem;

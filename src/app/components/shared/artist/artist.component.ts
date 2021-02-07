@@ -65,7 +65,7 @@ export class ArtistComponent implements OnInit {
   ngOnInit(): void {
     const local = localStorage.getItem('artist');
     this.artists = local === null ? this.artists : JSON.parse(local);
-    console.log('this.artists', this.artists);
+    // console.log('this.artists', this.artists);
   }
 
   vote(artist) {
